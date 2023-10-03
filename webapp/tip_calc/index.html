@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tip Calculator</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <label class="switch">
+        <input type="checkbox">
+        <span class="slider round"></span>
+    </label>
+
+    <h3>Tip Calculator</h3>
+
+    <span class="currencyinput">$
+        <input type="text" id="decimalInput" class="dollar-input" placeholder="Enter bill amount"
+            oninput="calculateTip.formatDecimalInput(this)">
+    </span>
+
+    <div class="slider-container">
+        <input type="range" id="percentageSlider" min="0" max="100" value="0" step="1"
+            oninput="calculateTip.updatePercentageSlider()">
+        <span id="percentageValue">0%</span>
+    </div>
+
+    <button id="calculateButton" onclick="calculateTip.updateTipAmount()">Calculate</button>
+
+    <div id="resultContainer">
+        <p id="resultTip"></p>
+        <p id="resultTotal"></p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
